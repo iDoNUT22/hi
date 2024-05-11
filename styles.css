@@ -1,0 +1,64 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure body covers the entire viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to new line on smaller screens */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.left-image, .right-image {
+    position: relative; /* Position relative for absolute positioning of img */
+    flex: 1;
+    margin: 10px; /* Add margin around images */
+}
+
+.left-image img, .right-image img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+    position: absolute; /* Position images absolutely within container */
+    top: 0;
+    left: 0;
+}
+
+.header {
+    flex: 2;
+    text-align: center;
+    padding: 20px; /* Add padding around header */
+}
+
+.header p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 100%;
+    border: 2px solid #333; /* Add border to paragraph */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+@media screen and (max-width: 600px) {
+    .left-image img,
+    .right-image img {
+        width: 50px; /* Adjust this value as needed */
+        position: absolute;
+        z-index: 1; /* Ensure image appears above other content */
+        top: 10px; /* Position from top */
+        left: 50%; /* Position horizontally centered */
+        width: 90px;
+        transform: translateX(-50%); /* Center horizontally */
+    }
+}
